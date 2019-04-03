@@ -1,8 +1,7 @@
 queue_list = list()
 
-
 #1) while문으로 숫자를 입력 받아 리스트에 저장(저장 순서는 스택, 큐에 따라서 다름)
-
+print("더 이상 원소를 추가하고 싶지 않을 경우, '엔터'")
 while True:
 
     n_node = input("enqueue : ",)
