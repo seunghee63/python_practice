@@ -7,7 +7,7 @@ def push(myList):
     for i in myList:
         top +=1
         stack.insert(top,i)
-        print("push :", stack)
+        #print("push :", stack)
     return stack
 
 #pop : 리스트를 인자로 받아 pop한 후 리스트를 리턴하는 함수
@@ -16,7 +16,7 @@ def pop(stack):
     top = len(stack)-1
     
     while True:
-        print("pop :", stack)
+        #print("pop :", stack)
         stack.pop(top)
         top-=1
 
