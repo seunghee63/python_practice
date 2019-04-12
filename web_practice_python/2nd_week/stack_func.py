@@ -14,14 +14,16 @@ def push(myList):
 def pop(stack):
 
     top = len(stack)-1
-    
-    while True:
-        #print("pop :", stack)
-        stack.pop(top)
-        top-=1
+    stack.pop(top)
 
-        if top <0:
-            return stack
+    return stack
+    # while True:
+    #     print("pop :", stack)
+    #     stack.pop(top)
+    #     top-=1
+
+    #     if top <0:
+    #         return stack
 
 #list_stack : 스택 출력 함수
 def list_stack(stack):
