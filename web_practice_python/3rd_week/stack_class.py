@@ -14,9 +14,17 @@ class stack_class:
     def isVariable(self, new_isVar):
         self.__isVariable = new_isVar
         
-        if(new_isVar == True):
-            a = int(input("스택의 크기를 입력하세요 단, stack의 크기는 0 이상 "))
-            self.__stack_len = a
+        if new_isVar == False:
+            self.__stack_len = 0
+
+    @property
+    def stack_len(self):
+        return self.__stack_len
+
+    @stack_len.setter
+    def stack_len(self,new_len):
+        self.__stack_len = new_len
+        
 
     def push(self, value):
 
@@ -26,7 +34,6 @@ class stack_class:
         
         self.__top +=1
         self.__stack_list.insert(self.__top,value)
-        return 
 
     def pop(self):
         if self.__top == -1:
@@ -35,7 +42,6 @@ class stack_class:
 
         self.__stack_list.pop(self.__top)
         self.__top -=1 
-        return 
 
     def top(self):
         print("* top value: ",self.__stack_list[self.__top])
@@ -48,12 +54,12 @@ class stack_class:
             print("* 비어있는 stack입니다.")
         else :
             print("* 비어있는 stack이 아닙니다.")
-        return
     
 if __name__ == "__main__":
     stack = stack_class()
 
     stack.isVariable = True
+    stack.stack_len = 2
 
     stack.push(1)
     stack.push(1)

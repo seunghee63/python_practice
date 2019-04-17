@@ -13,10 +13,18 @@ class queue_class:
     def isVariable(self, new_isVar):
         self.__isVariable = new_isVar
 
-        if(new_isVar == True):
-            a = int(input("큐의 크기를 입력하세요 단, 큐의 크기는 0 이상 "))
-            self.__queue_len = a
+        if new_isVar == False:
+            self.__stack_len = 0
 
+    @property
+    def queue_len(self):
+        return self.__queue_len
+
+    @queue_len.setter
+    def queue_len(self,new_len):
+        self.__queue_len = new_len
+            
+            
     def info(self):
         print(self.__queue_list)
         print(self.__isVariable)
@@ -32,25 +40,23 @@ class queue_class:
 
     def push(self, value):
 
-        print("길이 : ",len(self.__queue_list),"제한: ",self.__queue_len)
-
         if self.__isVariable == True and len(self.__queue_list) == self.__queue_len:
             print("* 더이상 삽입이 불가능합니다.")
             return
 
         self.__queue_list.append(value)
-        return 
 
     def front(self):
-        cnt = len(self.__queue_list)
-        if cnt == 0 :
+        if len(self.__queue_list) == 0 :
             return 
+
         print("* front : ",self.__queue_list[0])
 
     def back(self):
         cnt = len(self.__queue_list)
         if cnt == 0 :
             return 
+
         print("* back : ",self.__queue_list[cnt-1])
 
     def size(self):
@@ -61,12 +67,9 @@ class queue_class:
             print("* 비어있는 queue입니다.")
         else :
             print("* 비어있는 queue가 아닙니다.")
-        return
 
 if __name__ == "__main__":
     queue = queue_class()
-
-    queue.isVariable = True
 
     queue.push(1)
     queue.push(2)
@@ -75,6 +78,9 @@ if __name__ == "__main__":
     queue.empty()
     queue.front()
     queue.back()
+
+    queue.isVariable = True
+    queue.queue_len = 2
 
     queue.push(4)
     queue.back()
