@@ -51,9 +51,9 @@ class stack_class:
 
     def empty(self):
         if len(self.__stack_list) <= 0 :
-            print("* 비어있는 stack입니다.")
+            return True
         else :
-            print("* 비어있는 stack이 아닙니다.")
+            return False
     
 if __name__ == "__main__":
     stack = stack_class()

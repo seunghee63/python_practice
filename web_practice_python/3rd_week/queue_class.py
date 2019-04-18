@@ -64,9 +64,9 @@ class queue_class:
         
     def empty(self):
         if len(self.__queue_list) <= 0 :
-            print("* 비어있는 queue입니다.")
+            return True
         else :
-            print("* 비어있는 queue가 아닙니다.")
+            return False
 
 if __name__ == "__main__":
     queue = queue_class()
