@@ -1,0 +1,22 @@
+<html>
+<head>
+</head>
+<body>
+
+{% if result.score|int >= 90%}
+    <p>A</p>
+{% elif result.score|int >= 70%}
+    <p>B</p>
+{% elif result.score|int >= 50%}
+    <p>C</p>
+{% else%}
+    <p>D</p>
+{% endif %}
+
+{% filter upper %}
+    <p>{{result.word}}</p>
+{% endfilter %}
+
+
+</body>
+</html>
